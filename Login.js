@@ -23,7 +23,15 @@ const Login = () => {
                 if (log != null){
                     console.log(log);
                     const data = await AsyncStorage.getItem(username);
-                    console.log(JSON.parse(data).bg);
+                    const parsed = JSON.parse(data);
+
+                    if (parsed.password == password){
+                        navigation.navigate("Dashboard");
+                    }
+                    else{
+                        setError("Wrong Passowrd")
+                    }
+                    
                 }
             }
         } catch (error) {
