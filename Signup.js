@@ -24,7 +24,7 @@ const Signup = () => {
             console.log("Username saved")
             navigation.navigate("Login");
         } catch (error) {
-            
+            console.log(error)
         }
     }
     return (
@@ -53,6 +53,11 @@ const Signup = () => {
             <TouchableOpacity onPress={signup} style={styles.button}>
                 <Text style={{ color: 'white' }}>Sign Up </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>{navigation.navigate("Login")}} style={styles.button}>
+                <Text style={{ color: 'white' }}>Already have an account? Login </Text>
+            </TouchableOpacity>
+
         </View>
     )
 
